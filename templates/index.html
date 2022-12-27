@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url('./static/images/bg.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<title>
+    WPI-Prediction
+</title>
+
+<body>
+    <h1>WPI-Prediction Model(ANN)</h1>
+    <p>This is an Artificial neural network model and you can use it for the prediction of WPI(Water Pollution Index)
+    </p><br>
+    <p>click the predict now button to start predicting</p><br>
+    <div>
+        <!-- <a href="{{ url_for('predict') }}">predict page</a> -->
+        <form action="{{ url_for('predict') }}">
+            <button type="submit" class="glow-on-hover" style="float: center;">Predict Now</button>
+        </form>
+    </div>
+    <footer>
+        <!-- Copyrights -->
+        <div class="bg-light py-4">
+            <div class="container text-center">
+                <p class="text-muted mb-0 py-2">
+                    Developed by Chandan Kumar
+                    <a href="mailto:chandankr014@gmail.com">Mail</a>
+                    <a href="https://github.com/chandankr014">GitHub</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>MODEL Predicion</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<!--CSS-->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <body>
+            <centre>
+            <div class="login">
+            <form method="post">
+
+                <input type="text" id="myid" placeholder="pH value" name="pH" /><br>
+                <input type="text" id="myid" placeholder="DO" name="DO" /><br>
+                <input type="text" id="myid" placeholder="TDS" name="TDS" /><br>
+                <input type="text" id="myid" placeholder="Alkalinity" name="Alkalinity" /><br>
+                <input type="text" id="myid" placeholder="EC" name="EC" /><br>
+                <input type="text" id="myid" placeholder="Sodium" name="Na" /><br>
+                <input type="text" id="myid" placeholder="Calcium" name="Ca" /><br>
+                <input type="text" id="myid" placeholder="Magnesium" name="Mg" /><br>
+                <input type="text" id="myid" placeholder="Potassium" name="K" /><br>
+                <input type="text" id="myid" placeholder="Flourine" name="F" /><br>
+                <input type="text" id="myid" placeholder="Chlorine" name="Cl" /><br>
+                <input type="text" id="myid" placeholder="Nitrate" name="Nitrate" /><br>
+                <input type="text" id="myid" placeholder="Sulphate" name="Sulphate" /><br>
+                <input type="text" id="myid" placeholder="Phosphate" name="Phosphate" /><br>
+                <!-- submit button -->
+                <button type="submit" value="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+              </form> 
+              <h1>{{ pred }}</h1>
+            </centre>
+            </div>
+            
+        </body>
+</html>
