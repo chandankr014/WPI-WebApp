@@ -30,7 +30,20 @@ def predict():
         Phosphate = float(request.form['Phosphate'])
         input_var= [pH, DO, TDS, Alkalinity, EC, Na, Ca, Mg, K, F, Cl,Nitrate, Sulphate, Phosphate]
         res = model.predict([input_var])
-        return render_template('predict.html', pred="The Predicted value is :"+str(res[0][0]))
+        #function for wpi-index
+        def wpi_index(w):
+            wpi=float(w)
+            if wpi<0.5:
+                s = "Water quality is excellent"
+            elif wpi>0.5 and wpi<0.75:
+                s = "Water quality is good"
+            elif wpi>0/75 and wpi<1:
+                s = "Water is moderately polluted"
+            else:
+                s = "Water is highly polluted"
+            return s
+        wpi_=wpi_index(res[0][0])
+        return render_template('predict.html', pred="The Predicted value is :"+str(res[0][0]), wpi="WPI-Index says that : "+wpi_)
     return render_template('predict.html')
 
     #predict?pH=8.14&DO=8.7&TDS=84.0&Alkalinity=52.0&EC=147.0&Na=4.48&Ca=44.0&Mg=20.0&K=1.17&F=0.285&Cl=7.8&Nitrate=0.7&Sulphate=6.5&Phosphate=0.065
